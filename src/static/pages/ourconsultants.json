@@ -1,0 +1,81 @@
+{
+    "slider": {
+        "title": "Our expert consultants",
+        "text": "We have many consultant for our various working field, to provide our clients the best solutions",
+        "media": "pages/consulting.jpg"
+    },
+    "consultants":[
+        {
+            "name":"Software Engineering",
+            "people":[
+                {
+                    "picture": "/images/faces/masum.jpg",
+                    "name": "Masum Billah",
+                    "designation": "PhD, PGCHPE, MSC, FHCA",
+                    "about": "Senior technical lecturer University of tor Hampton , QAHE"
+                },
+                {
+                    "picture": "/images/faces/golam.jpg",
+                    "name": "Golam Gaus",
+                    "designation": "System Engineer (Network) at HastingsDirect",
+                    "about": "System Engineer Network CCNA, CCNP & PCNSE, BSc (Hons) Business Information System"
+                },
+                {
+                    "picture": "/images/faces/hussainalam.jpeg",
+                    "name": "Husain M M Alam",
+                    "designation": "ICT Analyst at Kings College Hospital NHS Foundation Trust",
+                    "about": "Specialist in Desktop Support and Networking.Excellent Experience in Network topology and Design, Cisco routers and Switch, Cisco IOS, OSI layer, OPERATING SYSTEMS "
+                },
+                {
+                    "picture": "/images/faces/md-tariqul-islam-pavel.jpg",
+                    "name": "Md Tariqul Islam",
+                    "designation": "Professor, Syracuse University",
+                    "about": "Served as a reviewer for the IEEE Consumer Communications & Networking Conference (CCNC), Journal of Security and Communication Network, International Journal of Information Security, IEEE Access, and few others."
+                }
+            ]
+        },
+        {
+            "name":"IoT & Electrical Engineering",
+            "people":[
+                {
+                    "picture": "/images/faces/bRokib.jpg",
+                    "name": "Rokibul Hasan Bhuiyan",
+                    "designation": "Embedded System Engineer",
+                    "about": "Years of professional experience in embedded systems & IoT enabled device development (designing, implementation, prototyping & debugging)."
+                },
+                {
+                    "picture": "/images/faces/mmi.jpeg",
+                    "name": "Maliha Momtaz Islam",
+                    "designation": "DevOps Intern at Nuance Communications",
+                    "about": "Full Stack Developer and open web enthusiast, open source activist and motivated with a passion for research and technology with 2+ year experience in developing IOT product line for focused market."
+                },
+                {
+                    "picture": "/images/faces/nafiurR.jpg",
+                    "name": "Nafiur Rahman",
+                    "designation": "Technology Consultant, Staples Canada",
+                    "about": "Maximizing sales opportunity with every customer by applying current selling techniques and company programs. Partnering with direct supervisor to achieve short and long-term goals for the technology departments."
+                }
+            
+            ]
+
+        },
+        {
+            "name":"Industry & Business Development",
+            "people":[
+                {
+                    "picture": "/images/faces/ishtiaq.jpg",
+                    "name": "Ishtiaq Ahmed",
+                    "designation": "Industrial Consultant",
+                    "about": "15 + years of experince in working at leading local and multinational pharmaceutical companies including Eskayef Bd Ltd and Sanofi Bangladesh Ltd."
+                },
+                {
+                    "picture": "/images/faces/miib.jpeg",
+                    "name": "Iftekharul Islam Bhuiyan",
+                    "designation": "Financial officer of Nilsen bd, Acme",
+                    "about": "More than 10 years extensive experience in Finance functions across industries from leading Pharmaceuticals, Big4 Consulting Firms to world’s leading Market Research Company."
+                }
+            ]
+
+        }
+    ]
+}

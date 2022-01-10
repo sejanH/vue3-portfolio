@@ -1,0 +1,76 @@
+.main_wrapper {
+    background-color: $primary;
+    padding: 0;
+    margin: 0;
+}
+.navbar {
+    background-color: $primary;
+    min-height: 3rem;
+    .navbar-brand {
+        min-height: 3rem;
+        a {
+            padding-left: 0;
+            @include until(768px) {
+                padding-left: 0.5rem;
+            }
+        }
+    }
+    .navbar-burger {
+        height: 3rem;
+        width: 3rem;
+    }
+    .navbar-start,
+    .navbar-end{
+        padding: 0rem 0.5rem 0rem 0.5rem;
+    }
+}
+    .navbar-item,
+    .navbar-link {
+        padding: 0rem 0.5rem;
+        color: $white;
+        img {
+            max-height: 2.5rem;
+        }
+        &:focus,
+        &:hover {
+            color: #4e4e4e !important;
+        }
+    }
+.h-480 {
+    height: 30rem;
+}
+.h-400 {
+    height: 25rem;
+    @include until($tablet){
+        height: 16rem;
+    }
+}
+
+h1 {
+    font-size: 3rem !important;
+    font-weight: 800;
+    @include until($tablet){
+        font-size: 2.5rem !important;
+        line-height: 3rem;
+    }
+}
+h2 {
+    font-size: 2.5rem !important;
+    font-weight: 600;
+}
+h3 {
+    font-size: 2rem !important;
+    font-weight: 600;
+}
+h4 {
+    font-size: 1.5rem !important;
+    font-weight: 600;
+}
+h5 {
+    font-size: 1rem !important;
+    font-weight: 600;
+}
+h6 {
+    font-size: 0.75rem !important;
+    font-weight: 600;
+}

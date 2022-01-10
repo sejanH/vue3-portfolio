@@ -1,0 +1,99 @@
+{
+    "menuItems": {
+        "dropdowns": [
+            {
+                "name": "Services",
+                "links": [
+                    {
+                        "name": "Custom Software Development",
+                        "slug": "software-engineering"
+                    },
+                    {
+                        "name": "UX/UI Design",
+                        "slug": "software-engineering#ui-ux"
+                    },
+                    {
+                        "name": "Front End",
+                        "slug": "software-engineering#frontend"
+                    },
+                    {
+                        "name": "Back Еnd",
+                        "slug": "software-engineering#backend"
+                    },
+                    {
+                        "name": "Quality Assurance",
+                        "slug": "software-engineering#sqa"
+                    },
+                    {
+                        "name": "Maintenance and Support",
+                        "slug": "software-engineering#ams"
+                    },
+                    {
+                        "name": "Business Analysis",
+                        "slug": "management-consultancy"
+                    },
+                    {
+                        "name": "3D printing and designing",
+                        "slug": "3d-design-print"
+                    }
+                ]
+            },
+            {
+                "name": "Solutions",
+                "links": [
+                    {
+                        "name": "IoT",
+                        "slug": "iot"
+                    },
+                    {
+                        "name": "Industrial Automation",
+                        "slug": "industry-solutions"
+                    },
+                    {
+                        "name": "Electrical Engineering",
+                        "slug": "electrical-engineering"
+                    },
+                    {
+                        "name": "Mobile Development",
+                        "slug": "software-engineering"
+                    },
+                    {
+                        "name": "Web Development",
+                        "slug": "software-engineering"
+                    }
+                ]
+            },
+            {
+                "name": "Solutions",
+                "links": [
+                    {
+                        "name": "Courier service",
+                        "slug": "iot#courier"
+                    },
+                    {
+                        "name": "Healthcare",
+                        "slug": "iot#health"
+                    },
+                    {
+                        "name": "Transport",
+                        "slug": "iot#transport"
+                    },
+                    {
+                        "name": "Software and Technology",
+                        "slug": "software-engineering"
+                    },
+                    {
+                        "name": "Industrial Manufacturing",
+                        "slug": "industry-solutions"
+                    },
+                    {
+                        "name": "Cloud Solutions",
+                        "slug": "software-engineering#cloud"
+                    }
+                ]
+            }
+        ],
+        "onlyLinks":[
+        ]
+    }
+}
