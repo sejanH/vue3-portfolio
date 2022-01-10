@@ -1,19 +1,23 @@
 <template>
-  <div class="h-400 slider columns is-mobile" v-if="slider">
-    <div class="left column is-two-thirds-tablet">
-      <h1>{{ slider.title }}</h1>
-      <p class="text">{{ slider.text }}</p>
-    </div>
-    <div class="right column is-one-third">
-      <div
-        class="images"
-        :style="{
-          background:
-            'url(' +
-            getImage(slider.media) +
-            ') 50% center / cover no-repeat transparent',
-        }"
-      ></div>
+  <div class="has-background-theme">
+    <div class="container is-max-widescreen">
+      <div class="h-400 slider columns is-mobile" v-if="slider">
+        <div class="left column is-two-thirds-tablet">
+          <h1>{{ slider.title }}</h1>
+          <p class="text">{{ slider.text }}</p>
+        </div>
+        <div class="right column is-one-third">
+          <div
+            class="images"
+            :style="{
+              background:
+                'url(' +
+                getImage(slider.media) +
+                ') 50% center / cover no-repeat transparent',
+            }"
+          ></div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -41,7 +45,6 @@ export default {
 <style lang="scss" scoped>
 .slider {
   display: flex;
-  margin: 0.75rem;
   vertical-align: middle;
   align-items: center;
   justify-content: center;
@@ -50,6 +53,7 @@ export default {
     color: $white;
   }
   .right {
+    margin-top: 0.75rem;
     @include until(767px) {
       display: none;
     }
