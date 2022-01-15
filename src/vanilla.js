@@ -1,3 +1,4 @@
+document.addEventListener('touchstart', onTouchStart, {passive: true});
 document.addEventListener('DOMContentLoaded', () => {
 
   // Get all "navbar-burger" elements
