@@ -1,0 +1,22 @@
+{
+    "sliders":{
+        "text": "<h1>WElcome to</h1><h3>Dreis Space Limited</h3><h4>A fast growing IT solution provider</h4>",
+        "slides":[
+            {
+                "navDescription":"<h4>ENGINEER</h4><p> devices, embedded, mobile, web, desktop, IoT and cloud solutions</p>",
+                "image":["wings.png","screw_middle.png","drone_body.png"],
+                "bg":"bg2.svg"
+            },
+            {
+                "navDescription":"<h4>SCALE</h4><p>an MVP into a high-load system driven by an extendible architecture</p>",
+                "image":["slider-300.png","slider-31.png"],
+                "bg":"bg1.svg"
+            },
+            {
+                "navDescription":"<h4>TRANSFORM</h4><p>analog to digital, process automation, Big Data, сloud computing</p>",
+                "image":["3D-printer2.png","3D-printer.png"],
+                "bg":"bg3.svg"
+            }
+        ]
+    }
+}

@@ -11,6 +11,7 @@
         </a>
 
         <a
+          id="hamburgerIcon"
           role="button"
           class="navbar-burger"
           aria-label="menu"
