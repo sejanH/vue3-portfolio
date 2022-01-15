@@ -1,4 +1,6 @@
-document.addEventListener('touchstart', onTouchStart, {passive: true});
+addEventListener(document, "touchstart", function(e) {
+  e.preventDefault();   // does nothing since the listener is passive
+}, Modernizr.passiveeventlisteners ? {passive: true} : false);
 document.addEventListener('DOMContentLoaded', () => {
 
   // Get all "navbar-burger" elements
