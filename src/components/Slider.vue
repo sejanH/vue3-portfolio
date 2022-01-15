@@ -1,10 +1,38 @@
 <template>
   <div class="has-background-theme" style="position: relative">
     <div v-html="sliders.text" class="fixed_title"></div>
-    <carousel :items-to-show="1" v-if="sliders">
-      <slide v-for="(slide, index) in sliders.slides" :key="index">
-        <div class="carousel__item" :style="'background: ' + slide.bg"></div>
-      </slide>
+    <carousel :items-to-show="1" v-if="sliders" ref="myCarousel">
+      <template #slides="{ currentSlide }">
+        <slide v-for="(slide, index) in sliders.slides" :key="index">
+          <div
+            class="carousel__item"
+            :style="
+              'background-position: 88% 25%; background-size: inherit;background-image: url(' +
+              require('@/assets/images/' + slide.bg) +
+              ')'
+            "
+          >
+            <div class="slide-wrapper">
+              <div
+                :class="[
+                  currentSlide == index && 'slide-active',
+                  'slide-container',
+                ]"
+              >
+                <div :class="classes[index][0]" v-if="slide.image[0]">
+                  <img :src="require('@/assets/images/' + slide.image[0])" />
+                </div>
+                <div :class="classes[index][1]" v-if="slide.image[1]">
+                  <img :src="require('@/assets/images/' + slide.image[1])" />
+                </div>
+                <div :class="classes[index][2]" v-if="slide.image[2]">
+                  <img :src="require('@/assets/images/' + slide.image[2])" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </slide>
+      </template>
       <template #addons="{ currentSlide }">
         <div class="slider__pagination">
           <li
@@ -14,11 +42,7 @@
             ]"
             v-for="(slide, index) in sliders.slides"
             :key="index"
-            @click="
-              () => {
-                goTo(index);
-              }
-            "
+            v-on:click="goTo(index)"
           >
             <div class="slide-menu-nav-button-description">
               <div class="slide-menu-nav-button-number">
@@ -45,6 +69,15 @@ import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide } from "vue3-carousel";
 export default {
   name: "HomeSlider",
+  data() {
+    return {
+      classes: {
+        0: ["slide__inner_top", "slide__inner_top", "slide__inner_bottom"],
+        1: ["slide__inner_bottom3 inner_ltr", "slide__inner_bottom2 inner_rtl"],
+        2: ["slide__inner_left2", "slide__inner_bottom3 slide3"],
+      },
+    };
+  },
   props: {
     sliders: {
       type: Object,
@@ -53,17 +86,200 @@ export default {
   },
   components: {
     Carousel,
-    Slide,
+    Slide
   },
   methods: {
     goTo(index) {
-      console.log(index);
+      this.$refs.myCarousel.nav.slideTo(index);
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+:deep(.slide-active) {
+  z-index: 2;
+  &.slide-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transform: translate3d(0px, 0px, 0px);
+    overflow: hidden;
+    backface-visibility: hidden;
+    transition: all 300ms ease-in-out 0ms;
+  }
+  .slide__inner_top,
+  .slide__inner_bottom {
+    display: block !important;
+    position: absolute;
+    right: 10%;
+    @include device("medium") {
+      text-align: center;
+      left: 0;
+      right: 0;
+    }
+    @include device("small") {
+      img {
+        width: 300px;
+      }
+    }
+  }
+  .slide__inner_top {
+    &:nth-of-type(1) {
+      bottom: 20%;
+      z-index: 3;
+      animation: slidedown1 1.5s, rotate 1.5s;
+      transform: rotate3d(1, 0, 0, 45deg);
+    }
+    &:nth-of-type(2) {
+      bottom: 15%;
+      z-index: 2;
+      animation: slidedown2 1.5s;
+      transform: rotate3d(1, 0, 0.1, -10deg);
+    }
+    @include device("medium") {
+      top: -20px;
+      h2 {
+        font-size: 15px;
+      }
+      h3 {
+        display: none;
+      }
+    }
+  }
+  .slide__inner_bottom {
+    bottom: 10%;
+    transform: scale3d(0.95, 1.25, 1);
+    animation: skew 1.5s;
+    @include device("medium") {
+      top: -20px;
+    }
+  }
+  .slide__inner_left {
+    display: block !important;
+    position: absolute;
+    right: 30%;
+    animation: ltr 2s;
+    transform: scale(0.8);
+    @include device("medium") {
+      right: 0;
+    }
+  }
+  .slide__inner_left2 {
+    display: block !important;
+    position: absolute;
+    right: 7%;
+    bottom: 15%;
+    animation: ltrInner 1.5s ease-in-out;
+    @include device("medium") {
+      animation: unset;
+      text-align: center;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      img {
+        width: 320px;
+      }
+    }
+    @include device("small") {
+      img {
+        width: 250px;
+      }
+    }
+  }
+  .slide__inner_bottom2 {
+    display: block !important;
+    position: absolute;
+    right: 9%;
+    transform: rotate(-21deg);
+    // bottom: 0;
+    @include device("medium") {
+      right: 15%;
+    }
+  }
+  .slide__inner_bottom3 {
+    display: block !important;
+    position: absolute;
+    right: 7%;
+    bottom: 17%;
+    animation: slidedown3 1.5s;
+    @include device("medium") {
+      animation: unset;
+      top: unset !important;
+      bottom: 8px !important;
+      text-align: center;
+      left: 0;
+      right: 0;
+    }
+    @include device("small") {
+      img {
+        width: 300px;
+      }
+    }
+    &.slide3 {
+      @include device("medium") {
+        left: 0;
+        right: 0;
+        top: 0;
+        img {
+          width: 320px;
+        }
+        animation: fadeIn ease 4s;
+        -webkit-animation: fadeIn ease 4s;
+        -moz-animation: fadeIn ease 4s;
+        -o-animation: fadeIn ease 4s;
+        -ms-animation: fadeIn ease 4s;
+      }
+      @include device("small") {
+        left: 0;
+        right: 0;
+        top: 0;
+        img {
+          width: 250px;
+        }
+      }
+    }
+  }
+  .inner_ltr {
+    right: 13%;
+    bottom: 22%;
+    animation: horizontal1 1.5s;
+    @include device("medium") {
+      animation: fadeIn ease 4s;
+      -webkit-animation: fadeIn ease 4s;
+      -moz-animation: fadeIn ease 4s;
+      -o-animation: fadeIn ease 4s;
+      -ms-animation: fadeIn ease 4s;
+    }
+  }
+  .inner_rtl {
+    bottom: 27%;
+    animation: horizontal2 1.5s;
+    @include device("medium") {
+      // animation: unset;
+      animation: fadeIn ease 4s;
+      -webkit-animation: fadeIn ease 4s;
+      -moz-animation: fadeIn ease 4s;
+      -o-animation: fadeIn ease 4s;
+      -ms-animation: fadeIn ease 4s;
+      img {
+        width: 100px;
+      }
+    }
+  }
+}
+.slide-container {
+  .slide__inner_top,
+  .slide__inner_bottom,
+  .slide__inner_left,
+  .slide__inner_left2,
+  .slide__inner_bottom2,
+  .slide__inner_bottom3 {
+    display: none;
+  }
+}
 :deep(.fixed_title) {
   text-align: left;
   position: absolute;
@@ -114,7 +330,7 @@ export default {
   max-width: 1152px;
   margin: 0 auto;
   @include until($tablet) {
-    height: 340px;
+    height: 275px;
   }
   :deep(.carousel__viewport) {
     display: flex;
@@ -128,10 +344,39 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
+      height: 380px;
+      background-repeat: no-repeat;
     }
   }
+  // .buttonControl {
+  //   position: relative;
+  //   height: 30px;
+  //   display: block;
+  //   :deep(.carousel__prev) {
+  //     background-color: $theme;
+  //     top: -340%;
+  //     @include until($tablet) {
+  //       top: -17px;
+  //       left: 15px;
+  //       border: 2px solid $primary;
+  //     }
+  //   }
+  //   :deep(.carousel__next) {
+  //     background-color: $theme;
+  //     top: -340%;
+  //     @include until($tablet) {
+  //       top: -17px;
+  //       right: 15px;
+  //       border: 2px solid $primary;
+  //     }
+  //   }
+  // }
 }
 :deep(.slider__pagination) {
+  @include until($tablet) {
+    display: none;
+  }
   position: absolute;
   bottom: 0;
   display: flex;

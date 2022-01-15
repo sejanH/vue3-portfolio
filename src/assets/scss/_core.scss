@@ -19,3 +19,233 @@ $link-focus-border: $primary;
 // Import Bulma and Buefy styles
 @import "~bulma";
 
+$breakpoints: (
+  "verysmall": 475px,
+  "small": 767px,
+  "medium": 992px,
+  "large": 1200px,
+) !default;
+
+@mixin device($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+
+@mixin slideDown($name, $from, $to) {
+    @-webkit-keyframes #{$name} {
+      from {
+        bottom: $from;
+      }
+      to {
+        bottom: $to;
+      }
+    }
+    @-moz-keyframes #{$name} {
+      from {
+        bottom: $from;
+      }
+      to {
+        bottom: $to;
+      }
+    }
+    @-ms-keyframes #{$name} {
+      from {
+        bottom: $from;
+      }
+      to {
+        bottom: $to;
+      }
+    }
+    @keyframes #{$name} {
+      from {
+        bottom: $from;
+      }
+      to {
+        bottom: $to;
+      }
+    }
+  }
+  @mixin horizontal($name, $from, $to) {
+    @-webkit-keyframes #{$name} {
+      from {
+        right: $from;
+      }
+  
+      to {
+        right: $to;
+      }
+    }
+    @-moz-keyframes #{$name} {
+      from {
+        right: $from;
+      }
+  
+      to {
+        right: $to;
+      }
+    }
+    @-ms-keyframes #{$name} {
+      from {
+        right: $from;
+      }
+  
+      to {
+        right: $to;
+      }
+    }
+    @keyframes #{$name} {
+      from {
+        right: $from;
+      }
+  
+      to {
+        right: $to;
+      }
+    }
+  }
+  
+  @keyframes ltr {
+    from {
+      right: 35%;
+    }
+  
+    to {
+      right: 30%;
+    }
+  }
+  @keyframes ltrInner {
+    from {
+      right: 13%;
+    }
+  
+    to {
+      right: 7%;
+    }
+  }
+  @keyframes rtlInner {
+    from {
+      right: 8%;
+    }
+  
+    to {
+      right: 10%;
+    }
+  }
+  @keyframes skew {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+  
+    to {
+      transform: scale3d(0.95, 1.25, 1);
+    }
+  }
+  @keyframes rotate {
+    from {
+      transform: rotate3d(1, 0, 0, 0);
+    }
+  
+    to {
+      transform: rotate3d(1, 0, 0, 45deg);
+    }
+  }
+  @keyframes rotateRTL {
+    from {
+      right: 34%;
+    }
+  
+    to {
+      right: 37%;
+    }
+  }
+  @keyframes zoom {
+    from {
+      transform: scale(1, 1);
+    }
+  
+    to {
+      transform: scale(1.2, 1.2);
+    }
+  }
+  @keyframes transform {
+    from {
+      transform: translateX(-200%);
+    }
+  
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes ripple {
+    0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    75% {
+      -webkit-transform: scale(5.25);
+      transform: scale(5.25);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(7);
+      transform: scale(7);
+      opacity: 0;
+    }
+  }

@@ -6,9 +6,9 @@
       aria-label="main navigation"
     >
       <div class="navbar-brand has-background-theme">
-        <a class="navbar-item" href="/">
+        <router-link class="navbar-item" to="/">
           <img :src="navbarData.logo" width="128" height="48" />
-        </a>
+        </router-link>
 
         <a
           id="hamburgerIcon"
