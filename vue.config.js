@@ -1,9 +1,10 @@
 module.exports = {
-  // lintOnSave: false,
+  lintOnSave: false,
   pages: {
-    index: { 
+    index: {
       entry: "src/main.js",
-      title: "DreisSpace" }
+      title: "DreisSpace"
+    }
   },
   css: {
     loaderOptions: {

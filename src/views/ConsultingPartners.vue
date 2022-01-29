@@ -8,7 +8,7 @@
         <h3 class="is-size-3 mx-2">{{ consultant.name }} &mdash;</h3>
         <div class="columns">
           <div
-            class="column is-one-quarter"
+            class="column is-3"
             v-for="(c, indx) in consultant.people"
             :key="indx"
           >

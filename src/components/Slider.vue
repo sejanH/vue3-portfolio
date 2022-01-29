@@ -97,6 +97,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@include horizontal(horizontal2, 5%, 12%);
+@include horizontal(horizontal1, 22%, 16%);
 :deep(.slide-active) {
   z-index: 2;
   &.slide-container {
@@ -192,7 +194,7 @@ export default {
   .slide__inner_bottom2 {
     display: block !important;
     position: absolute;
-    right: 9%;
+    right: 12%;
     transform: rotate(-21deg);
     // bottom: 0;
     @include device("medium") {
@@ -243,7 +245,7 @@ export default {
     }
   }
   .inner_ltr {
-    right: 13%;
+    right: 16%;
     bottom: 22%;
     animation: horizontal1 1.5s;
     @include device("medium") {
@@ -325,12 +327,12 @@ export default {
   }
 }
 .carousel {
-  height: 380px;
+  height: 400px;
   position: relative;
   max-width: 1152px;
   margin: 0 auto;
   @include until($tablet) {
-    height: 275px;
+    height: 280px;
   }
   :deep(.carousel__viewport) {
     display: flex;

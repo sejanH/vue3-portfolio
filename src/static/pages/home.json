@@ -1,22 +1,88 @@
 {
-    "sliders":{
-        "text": "<h1>WElcome to</h1><h3>Dreis Space Limited</h3><h4>A fast growing IT solution provider</h4>",
-        "slides":[
+    "sliders": {
+        "text": "<h1>Welcome to</h1><h3>Dreis Space Limited</h3><h4>A fast growing IT solution provider</h4>",
+        "slides": [
             {
-                "navDescription":"<h4>ENGINEER</h4><p> devices, embedded, mobile, web, desktop, IoT and cloud solutions</p>",
-                "image":["wings.png","screw_middle.png","drone_body.png"],
-                "bg":"bg2.svg"
+                "navDescription": "<h4>ENGINEER</h4><p> devices, embedded, mobile, web, desktop, IoT and cloud solutions</p>",
+                "image": [
+                    "wings.png",
+                    "screw_middle.png",
+                    "drone_body.png"
+                ],
+                "bg": "bg2.svg"
             },
             {
-                "navDescription":"<h4>SCALE</h4><p>an MVP into a high-load system driven by an extendible architecture</p>",
-                "image":["slider-300.png","slider-31.png"],
-                "bg":"bg1.svg"
+                "navDescription": "<h4>SCALE</h4><p>an MVP into a high-load system driven by an extendible architecture</p>",
+                "image": [
+                    "slider-300.png",
+                    "slider-31.png"
+                ],
+                "bg": "bg1.svg"
             },
             {
-                "navDescription":"<h4>TRANSFORM</h4><p>analog to digital, process automation, Big Data, сloud computing</p>",
-                "image":["3D-printer2.png","3D-printer.png"],
-                "bg":"bg3.svg"
+                "navDescription": "<h4>TRANSFORM</h4><p>analog to digital, process automation, Big Data, сloud computing</p>",
+                "image": [
+                    "3D-printer2.png",
+                    "3D-printer.png"
+                ],
+                "bg": "bg3.svg"
             }
         ]
-    }
+    },
+    "solutions_we_deliver": [
+        {
+            "name": "IOT",
+            "slug": "iot",
+            "description": "We help automate equipment monitoring, health and safety condition compliance, and leveraging data for making informed decisions.Consumer gadgets, smart home healthcare solutions, computer numerical controls, DSP and network solutions.",
+            "media": {
+                "bg_image": "/images/IOT.jpg",
+                "bg_video": "/videos/IOT.mp4"
+            }
+        },
+        {
+            "name": "Electrical Engineering",
+            "slug": "electrical-engineering",
+            "description": "We can take on schematic and PCB design, electronics based on SoC and SoM, simulation and analysis, testing and bring-up — we work with various CPU architectures, interfaces, and memory types, implementing the latest technologies into your hardware products.",
+            "media": {
+                "bg_image": "/images/ee.jpg",
+                "bg_video": "/videos/EEE.mp4"
+            }
+        },
+        {
+            "name": "Software Engineering",
+            "slug": "software-engineering",
+            "description": "We design new devices and embedded software for our clients to level up their business in the global electronics market. Our engineers can join any stage of your project: from feasibility studies to the launch of mass production.",
+            "media": {
+                "bg_image": "/images/software-engineering.jpg",
+                "bg_video": "/videos/SE.mp4"
+            }
+        },
+        {
+            "name": "3D Design & Print",
+            "slug": "3d-design-print",
+            "description": "Our product design services will help you turn any idea into a functional realistic product  no matter the complexity.We procide Consultancy, Concept building ideas along with design and prototype before setting up for production stage",
+            "media": {
+                "bg_image": "/images/3DPrint.jpg",
+                "bg_video": "/videos/3DPRINT.mp4"
+            }
+        },
+        {
+            "name": "Industry Solutions",
+            "slug": "industry-solutions",
+            "description": "While machines became good at eliminating repetitive jobs, industries still needed highly-qualified professionals, who could control, monitor and maintain the complicated manufacturing workflows. Industrial automation aims at bringing complete autonomy to the manufacturing sector",
+            "media": {
+                "bg_image": "/images/industrial-automation.jpeg",
+                "bg_video": "/videos/industry.mp4"
+            }
+        },
+        {
+            "name": "Management & Consultancy",
+            "slug": "management-consultancy",
+            "description": "We help automate multi-party communication, equipment monitoring, health and safety condition compliance, and leveraging data for making informed decisions.",
+            "media": {
+                "bg_image": "/images/m-and-c.jpg",
+                "bg_video": "/videos/management.mp4"
+            }
+        }
+    ]
 }
